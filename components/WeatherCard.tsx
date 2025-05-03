@@ -3,6 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { View, Text, Dimensions } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
+import { CurvedHeader } from './CurvedHeader';
 import { LandscapeSvg } from './LandscapeSvg';
 
 const { width } = Dimensions.get('window');
@@ -31,7 +32,7 @@ export const WeatherCard = ({
   hourlyForecast,
 }: WeatherCardProps) => {
   const gradientColors = isNight
-    ? (['#2c3e50', '#4a69bd'] as const)
+    ? (['#0f2027', '#203a43'] as const)
     : (['#87CEEB', '#1E90FF'] as const);
 
   const renderWeatherIcon = (iconName: string, size = 24) => {
@@ -69,11 +70,10 @@ export const WeatherCard = ({
 
         {/* SVG Landscape */}
         <View style={styles.landscapeContainer}>
-          <LandscapeSvg width={width} height={250} isNight={isNight} />
+          <LandscapeSvg width={width} height={376} isNight={isNight} />
         </View>
 
-        <View style={styles.forecastContainer}>
-          <Text style={styles.forecastTitle}>Weather Today</Text>
+        <CurvedHeader title="Weather Today" width={width} height={180} curveHeight={20}>
           <View style={styles.hourlyForecast}>
             {hourlyForecast.map((item, index) => (
               <View key={index} style={styles.hourlyItem}>
@@ -86,7 +86,7 @@ export const WeatherCard = ({
               </View>
             ))}
           </View>
-        </View>
+        </CurvedHeader>
       </LinearGradient>
     </View>
   );
@@ -126,13 +126,14 @@ const styles = StyleSheet.create((theme, rt) => ({
     marginLeft: 5,
   },
   temperatureContainer: {
-    alignItems: 'center',
+    paddingHorizontal: 26,
     marginTop: 20,
+    width: '100%',
   },
   temperatureText: {
     color: 'white',
-    fontSize: 120,
-    fontWeight: '200',
+    fontSize: 130,
+    fontWeight: '300',
   },
   conditionContainer: {
     position: 'absolute',
@@ -154,10 +155,9 @@ const styles = StyleSheet.create((theme, rt) => ({
   landscapeContainer: {
     width: '100%',
     height: 250,
-    marginTop: 20,
     position: 'relative',
-    overflow: 'hidden',
-    borderRadius: 15,
+    // overflow: 'hidden',
+    // borderRadius: 15,
   },
   forecastContainer: {
     backgroundColor: 'white',
@@ -176,6 +176,7 @@ const styles = StyleSheet.create((theme, rt) => ({
   hourlyForecast: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '100%',
   },
   hourlyItem: {
     alignItems: 'center',

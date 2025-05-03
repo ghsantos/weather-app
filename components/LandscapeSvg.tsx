@@ -69,7 +69,7 @@ export const LandscapeSvg = ({ width, height, isNight = false }: LandscapeSvgPro
         </Defs>
 
         {/* Sky background */}
-        <Rect x="0" y="0" width={width} height={height} fill="url(#skyGradient)" />
+        {/* <Rect x="0" y="0" width={width} height={height} fill="url(#skyGradient)" /> */}
 
         {/* Sun or Moon */}
         {isNight ? (
@@ -217,7 +217,7 @@ export const LandscapeSvg = ({ width, height, isNight = false }: LandscapeSvgPro
         </G>
 
         {/* Ground */}
-        <Rect x="0" y={height * 0.95} width={width} height={height * 0.05} fill={colors.ground} />
+        {/* <Rect x="0" y={height * 0.95} width={width} height={height * 0.05} fill={colors.ground} /> */}
       </Svg>
     </View>
   );
