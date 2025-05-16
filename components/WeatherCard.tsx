@@ -32,8 +32,8 @@ export const WeatherCard = ({
   hourlyForecast,
 }: WeatherCardProps) => {
   const gradientColors = isNight
-    ? (['#0f2027', '#203a43'] as const)
-    : (['#87CEEB', '#1E90FF'] as const);
+    ? (['#0f2027', '#203a43', '#181c25', '#181c25'] as const)
+    : (['#87CEEB', '#1E90FF', '#ffd3b6', '#ffd3b6'] as const);
 
   const renderWeatherIcon = (iconName: string, size = 24) => {
     switch (iconName) {
@@ -70,7 +70,7 @@ export const WeatherCard = ({
 
         {/* SVG Landscape */}
         <View style={styles.landscapeContainer}>
-          <LandscapeSvg width={width} height={376} isNight={isNight} />
+          <LandscapeSvg width={width} height={300} isNight={isNight} />
         </View>
 
         <CurvedHeader title="Weather Today" width={width} height={180} curveHeight={20}>

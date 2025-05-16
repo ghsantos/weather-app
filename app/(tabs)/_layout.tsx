@@ -19,6 +19,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: theme.colors.astral,
         tabBarStyle: {
           backgroundColor: theme.colors.background,
+          display: 'none',
         },
       }}>
       <Tabs.Screen

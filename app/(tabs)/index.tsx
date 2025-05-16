@@ -15,9 +15,10 @@ export default function Home() {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   container: {
     flex: 1,
     backgroundColor: theme.colors.background,
+    paddingBottom: rt.insets.bottom,
   },
 }));
