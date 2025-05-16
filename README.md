@@ -2,6 +2,9 @@
 
 A beautiful weather application built with React Native and Expo, featuring a modern UI design with day and night themes.
 
+![preview](https://github.com/user-attachments/assets/7585fa56-e6ab-4b24-9900-b7605340d67d)
+
+
 ## Features
 
 - Beautiful weather cards with day/night themes
